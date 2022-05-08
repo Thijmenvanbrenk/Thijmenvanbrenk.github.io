@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+## Welcome to my portfolio
 
-You can use the [editor on GitHub](https://github.com/Thijmenvanbrenk/Thijmenvanbrenk.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+In this github page I will show what i have learned in the pas 4 months.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Reproducability
 
-### Markdown
+Reproducability is an important part of data science because it makes sure the data is handled appropriately and its results can be accepted. People will also be able to use the same code for different experiments so they don't have to put in the time to make the same code again.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[here](https://thijmenvanbrenk.github.io/assignment01.html) you can see how i have used a dataset from a published report and performed a quick data-analysis to see if i could come up with the same results.
 
-```markdown
-Syntax highlighted code block
+Checking if others are also publishing their raw data and code is also important for reproducible science, in [this page](https://thijmenvanbrenk.github.io/assignment02.html) shows you how i have ranked a random published paper on a the criteria for reproducibility.
 
-# Header 1
-## Header 2
-### Header 3
+Working reproducible also means having your files organized, [here](https://thijmenvanbrenk.github.io/assignment03.html) you can see how i have stored my files for a previous project.
 
-- Bulleted
-- List
+### CV
 
-1. Numbered
-2. List
+Showing who i am, what experience i have and what skills i have learned is also important to show in a portfolio about me. So [here](https://thijmenvanbrenk.github.io/assignment03.html) you can see how i made my CV using RMarkdown
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Thijmenvanbrenk/Thijmenvanbrenk.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
