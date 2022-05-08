@@ -14,5 +14,5 @@ Working reproducible also means having your files organized, [here](https://thij
 
 ### CV
 
-Showing who i am, what experience i have and what skills i have learned is also important to show in a portfolio about me. So [here](https://thijmenvanbrenk.github.io/assignment03.html) you can see how i made my CV using RMarkdown
+Showing who i am, what experience i have and what skills i have learned is also important to show in a portfolio about me. So [here](https://thijmenvanbrenk.github.io/assignment04.html) you can see how i made my CV using RMarkdown
 
