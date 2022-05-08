@@ -2,7 +2,7 @@
 title: "Amount of offspring for C. elegans incubated in different substances"
 author: "Thijmen van Brenk"
 date: "`r Sys.Date()`"
-output: bookdown::html_document2
+output: bookdown::gitbook
 bibliography: "`r rbbt::bbt_write_bib('bibliography/bibliography01.json', overwrite = TRUE)`"
 ---
 
