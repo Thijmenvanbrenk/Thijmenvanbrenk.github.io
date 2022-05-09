@@ -28,4 +28,4 @@ Using datasets is very common in the data science department, so using a databas
 
 Having to keep writing the same information for every table and figure like date and origin will become a tedious job if you have a few tables and figures to go through. to make this an easier task I can show you [here]() how using parameters will make writing information for tables and figures easier. 
 
-If you want to see how i made this HTML please check out my [portfolio github repository](https://github.com/Thijmenvanbrenk/Portfolio) for the original code
+If you want to see how i made this HTML please check out my [portfolio github repository](https://github.com/Thijmenvanbrenk/Portfolio) for the original code, and to see which data and which pictures i have used you can check out my [data folder](https://thijmenvanbrenk.github.io/data/)
