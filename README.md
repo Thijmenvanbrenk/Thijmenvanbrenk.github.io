@@ -27,3 +27,5 @@ Writing introductions is a task that can't be taken lightly, finding the paper y
 Using datasets is very common in the data science department, so using a database like PostgreSQL is prefered. but talking to DBeaver requires talking in SQL. in [this]() page you can see that I am capable of communicating with DBeaver using SQL.
 
 Having to keep writing the same information for every table and figure like date and origin will become a tedious job if you have a few tables and figures to go through. to make this an easier task I can show you [here]() how using parameters will make writing information for tables and figures easier. 
+
+If you want to see how i made this HTML please check out my [portfolio github repository](https://github.com/Thijmenvanbrenk/Portfolio) for the original code
