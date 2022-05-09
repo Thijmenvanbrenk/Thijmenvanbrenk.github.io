@@ -1,6 +1,6 @@
 ## Welcome to my portfolio
 
-In this github page I will show what I have learned in the pas 4 months.
+In this github page I will show what I have learned in the past 4 months.
 
 ### Reproducability
 
