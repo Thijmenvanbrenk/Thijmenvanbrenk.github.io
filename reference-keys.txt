@@ -1,0 +1,11 @@
+introduction
+personality
+reproducability
+extra-skills
+personality-1
+reproducability-1
+reproducing-data-from-a-published-paper
+checking-reproducability-for-published-papers.
+pesticide-influence-on-consumption-rate-and-survival-for-bees.
+impact-of-analysis-decisions-for-episodic-memory-and-retrieval-practices.
+organisation-of-my-files
