@@ -1,7 +1,7 @@
 ---
 title: "Open peer review of data about the toxicology of pesticedes for bees"
 author: "Thijmen van Brenk"
-date: "2022-05-30"
+date: "2022-05-31"
 output: bookdown::html_document2
 ---
 

@@ -3,9 +3,14 @@ personality
 reproducability
 extra-skills
 personality-1
+cv
 reproducability-1
 reproducing-data-from-a-published-paper
 checking-reproducability-for-published-papers.
 pesticide-influence-on-consumption-rate-and-survival-for-bees.
 impact-of-analysis-decisions-for-episodic-memory-and-retrieval-practices.
 organisation-of-my-files
+extra-skills-1
+writing-an-introduction-using-zotero-for-references
+creating-paramaters-for-different-data-inputs
+references
