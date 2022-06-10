@@ -1,7 +1,7 @@
 ---
 title: "Amount of offspring for C. elegans incubated in different substances"
 author: "Thijmen van Brenk"
-date: "2022-05-31"
+date: "2022-06-10"
 output: bookdown::render_book()
 ---
 
