@@ -3,7 +3,7 @@ title: "SQL"
 author: "Thijmen"
 output: bookdown::html_document2
 params: 
-  password: "kjdfGH789"
+  password: ""
 ---
 
 ## Using SQL to store data
@@ -123,8 +123,8 @@ flu_tidy %>% head(5)
 ```
 
 If we want to eventually merge these 3 data files together we need to make the date and country variables equal:        
-* date from flu and dengue data need to be split into year, month, day.       
-* country needs to be of class factor       
+-- Date from flu and dengue data need to be split into year, month, day.       
+-- Country needs to be of class factor.       
 
 
 ```r
@@ -135,7 +135,7 @@ dengue_tidy <- dengue_tidy %>% separate(Date, into = c("year", "month", "day"), 
 flu_tidy <- flu_tidy %>% separate(Date, into = c("year", "month", "day"), convert = T, sep = "-")
 ```
 
-We will store this data so we always have our tidy versions by hand
+We will store this data so we always have our tidy versions by hand.
 
 
 ```r
@@ -149,7 +149,7 @@ gapminder %>% write.csv("data/gapminder.csv")
 gapminder %>% write_rds("data/gapminder.rds")
 ```
 
-Now we can insert these dataframes into SQL 
+Now we can insert these dataframes into SQL. 
 
 
 ```r
@@ -204,7 +204,7 @@ gapminderSQL %>% head(5)
 ```
 It seems like inserting it into DBeaver and pulling it back changes the data classes for every variable.        
 This is not a big problem, we just have to make sure to change the classes of certain values whenever we import something from DBeaver.        
-we can now combine these 3 dataframes into 1 big dataframe based on country and year.       
+We can now combine these 3 dataframes into 1 big dataframe based on country and year.       
 
 
 ```r
@@ -357,7 +357,7 @@ t.test(formula = summary_arg_bra_flu$total ~ summary_arg_bra_flu$country,
 ```
 
 This had some interesting results. lets try something different this time.        
-lets see if some south-east asian countries have reduced their dengue infections between 2002 - 2015.
+Lets see if some south-east asian countries have reduced their dengue infections between 2002 - 2015.
 
 
 ```r
@@ -444,4 +444,5 @@ summary_flu_inc_north %>%
 ```
 
 <img src="07-SQL_files/figure-html/unnamed-chunk-9-1.png" width="672" />
-As we can see in this graph, all
+<br>        
+As we can see in this graph, most flu incidence occurs during the winter so saying that people get sick from the flu in the winter would be correct.

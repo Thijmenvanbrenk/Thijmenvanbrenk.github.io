@@ -1,0 +1,228 @@
+---
+title: "shiny for phylogenetic trees"
+author: "Thijmen"
+runtime: shiny
+---
+
+```{r, include=FALSE}
+
+library(shiny)
+library(shinythemes)
+library(msa)
+library(tidyverse)
+library(tidyr)
+library(here)
+library(adegenet)
+library(ape)
+#BiocManager::install("ggtree")
+library(ggtree)
+#BiocManager::install("treeio")
+library(treeio)
+
+```
+
+```{r, include=FALSE}
+ui <- fluidPage(
+  
+  # makes you choose your own theme (I like themes (: )
+  shinythemes::themeSelector(),
+  
+  titlePanel("Create your own phylogenetic tree"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      
+      h4("Input files"),
+      
+      fileInput(inputId = "fasta_file",
+                label = "Select a fasta file",
+                accept = ".fa"),
+      
+      fileInput(inputId = "metadata",
+                label = "Select the metadata",
+                accept = ".csv"),
+      
+      actionButton(inputId = "go",
+                   label = "Start analysis/Reset graph"),
+      
+      h4("Retrieval settings"),
+      
+      textInput(inputId = "accession",
+                label = "Insert the accession number"),
+      
+      actionButton(inputId = "zoom",
+                   label = "Zoom in on clade"),
+      
+      h4("Visualization"),
+      
+      selectInput(inputId = "colour",
+                  label = "Which factor should be distinguished on",
+                  choices = c("country", "host", "isolation", "collection_date"),
+                  selected = "country"),
+      
+      width = 3
+    
+    ),
+    
+    mainPanel(
+      tabsetPanel(
+        tabPanel("How to download the required files",
+                 tags$div(
+                   tags$h4("Requirements"),
+                   "This shiny requires very specific data files, so to make sure there isnt any confusion I made a list of what these files need:",
+                   tags$br(),
+                   "1. All sequences have to be the same length.",
+                   tags$br(),
+                   "2. Metadata must contain \"accession\", \"host\", \"country\", \"isolation\" and \"collection_date\".",
+                   tags$br(), tags$br(),
+                   tags$h4("Downloading files"),
+                   "1. Go to the site of ",
+                   tags$a(href="https://www.ncbi.nlm.nih.gov/genome/viruses/variation/", "the NCBI."),
+                   tags$br(),
+                   "2. Go to the virus databank you want to make the tree of.",
+                   tags$br(),
+                   "3. Select nucleotide sequence type.",
+                   tags$br(),
+                   "4. Select your filters. (tip: select a region that has the full cds)",
+                   tags$br(),
+                   "5. Click \"Add query\" and \"Show results\".",
+                   tags$br(),
+                   "6. Make sure you only select the same region with the same length!!",
+                   tags$br(),
+                   "7.  Click \"Customize label\", make sure the label only contains \"{accession}\". (this makes it easier to see later on) ",
+                   tags$br(),
+                   "8. Download the \"Nucleotide (fasta)\" and \"Result set (CSV)\" options.",
+                   tags$br(),
+                   "9. Input these two files in this shiny and go to the next tab.",
+                   tags$br(),tags$br(),
+                   tags$h4("Extra information"),
+                   "Creating a phylogeny tree is not easy and requires allot of factors for it to go right, thats why this shiny only has the basics. Later on I am planning on adding \"Multiple Sequence Alignment\", but I do not have time for that at this moment.",
+                   tags$br(),
+                   "If there are any questions feel free to contact me through",
+                   tags$a(href="https://github.com/thijmenvanbrenk", "my github"
+                   ))),
+        
+        tabPanel("Phylogenetic tree",
+                 tableOutput("meta"),
+                 plotOutput("phylo"))
+        
+        
+      
+          ),
+        
+        
+          width = 9)
+    
+  )
+)
+
+server <- function(input, output, session) {
+  
+  # inputting the fasta file
+  
+  nucleotides <- reactive({
+  
+    req(input$fasta_file)
+    
+    readDNAStringSet(input$fasta_file$datapath)
+  
+  })
+  # inputting the metadata file
+  
+  metadata <- reactive({
+    
+    req(input$metadata)
+    
+    read.csv(input$metadata$datapath)
+  })
+  # extracting just the years from metadata
+  
+  metadata_year_temp <- reactive({
+    
+    metadata() %>% separate(collection_date, into = "collection_date", sep = 4)
+  })
+  # making inputted tree
+  
+  nj_tree <- reactive({
+    
+    as.DNAbin(nucleotides()) %>%
+      dist.dna(model = "TN93") %>%
+      bionj()
+  })
+
+  # time to make the graph
+  
+  # first create te full graph
+  tree_foundation <- reactive({
+    
+    ggtree(nj_tree()) +
+      geom_treescale()
+  
+    })
+  
+  tree_full <- reactive({
+    
+    tree_foundation() %<+% metadata_year_temp() +
+       geom_tiplab(aes_string(color = input$colour), size = 3)
+  })
+  
+  # then the zoomed in graph
+  tree_zoomed <- reactive({
+   ggtree(tree_subset(nj_tree(), input$accession)) +
+  geom_treescale()
+  })
+  
+  tree_zoomed_full <- reactive({
+    
+    tree_zoomed() %<+% metadata_year_temp() +
+  geom_tiplab(aes_string(color = input$colour), size = 3)
+  })
+  
+  # now tell shiny which to show when
+  
+  tree_output <- reactiveValues(plot=NULL)
+  
+  observeEvent(input$go, {
+  
+    tree_output$plot <- tree_full()
+  })
+  
+  observeEvent(input$zoom, {
+    
+    tree_output$plot <- tree_zoomed_full()
+  })
+  
+  # now we can output the plot
+  output$phylo <- renderPlot({
+  
+    if(is.null(tree_output$plot)) {
+      
+    } else {
+    tree_output$plot
+    }
+    })
+  
+  # show the information about the selected accession code
+  output$meta <- renderTable({
+    
+    output_table <- metadata_year_temp() %>% 
+      filter(metadata_year_temp()$accession == input$accession)
+    
+    if(nrow(output_table) == 0) {
+      validate("This accession number does not exist")
+    } else {
+      output_table
+    }
+    
+  })
+  
+}
+```
+
+
+```{r, echo=FALSE}
+shinyApp(ui, server, options = list(height=650, width = 1300))
+
+```
+
+

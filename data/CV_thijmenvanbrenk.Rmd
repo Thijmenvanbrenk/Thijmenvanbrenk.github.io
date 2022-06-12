@@ -1,0 +1,194 @@
+---
+title: "Thijmens CV"
+author: "Thijmen van Brenk"
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: TRUE
+# uncomment this line to produce HTML and PDF in RStudio:
+knit: pagedown::chrome_print
+---
+
+
+
+
+
+Aside
+================================================================================
+![Pasfoto](CV_foto.jpg){width=80%}
+
+
+Extra Informatie {#skills}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> tvanbrenk@outlook.com
+- <i class="fa fa-github"></i> [github.com/thijmenvanbrenk](https://github.com/thijmenvanbrenk)
+- <i class="fa fa-phone"></i> 06 387-349-75
+- <i class="fa fa-car"></i> Rijbewijs B
+- <i class="fa fa-flag"></i> Nederlands
+- Voor meer informatie ben ik bereikbaar via mijn email
+
+
+Talenkennis {#skills}
+--------------------------------------------------------------------------------
+
+- Nederlands: Moedertaal
+- Engels: Vloeiend
+
+Competenties {#skills}
+--------------------------------------------------------------------------------
+
+- Stressbestendig
+- Hardwerkend
+- Zelfstandig
+- Doorzettingsvermogen
+- Loyaal
+
+<br/>           
+<br/>
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+
+Dit CV is gemaakt met de R package [**pagedown**](https://github.com/rstudio/pagedown).            
+Laatst geupdate op: `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Thijmen van Brenk {#title}
+--------------------------------------------------------------------------------
+
+### Persoonsgegevens
+
+```{css making a table, echo=FALSE}
+
+table {   border-collapse: separate;   border-spacing: 15px 0;  }
+```
+
+
+<table> 
+  <tr> 
+    <td> Voornaam: </td> 
+    <td> Thijmen </td> 
+  </tr> 
+  <tr> 
+    <td> Achternaam: </td> 
+    <td> van Brenk </td> 
+  </tr>
+  <tr> 
+    <td> Adres: </td> 
+    <td> Tolsestraat 23 </td> 
+  </tr> 
+  <tr> 
+    <td>  </td> 
+    <td> 4043KB Opheusden </td> 
+  </tr> 
+    <tr> 
+    <td> Geboortedatum: </td> 
+    <td> 27/04/2002 </td> 
+  </tr> 
+  <tr> 
+    <td> Geboorteplaats: </td> 
+    <td> Nijmegen </td> 
+  </tr>
+  <tr> 
+    <td> Geslacht: </td> 
+    <td> Man </td> 
+  </tr> 
+</table>
+
+
+Opleidingen {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### Biologie en medisch laboratoriumonderzoek
+
+Hogeschool Utrecht
+
+Utrecht, NL
+
+heden - 2019
+
+- *Specialisatiekeuze:* Microbiologie
+- *Minor:* Data science for biology 1-2
+- *Projecten:*            
+&nbsp;&nbsp;&nbsp;&nbsp;- Determinatie en biofilm assay van bacteriën bij Quaker Houghton           
+&nbsp;&nbsp;&nbsp;&nbsp;- PCR validatie voor *Porphyromonas gingivalis*
+
+### HAVO Profiel N&G, N&T
+
+Ichthus College
+
+Veenendaal, NL
+
+2019 - 2014
+
+
+Werkervaring {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### Administratief medewerker
+
+Ziekenhuis Gelderse Vallei
+
+Ede, NL
+
+Heden - 2021
+
+- Patiëntmaterialen inboeken met behulp van XCARE en GLIMS
+- Patiëntmaterialen inzetten 
+- Labmaterialen bijvullen en HAP-pakketten maken
+
+### Medewerker kuikenbroederij
+
+Kuikenbroederij en Pluimveebedrijf Het Anker BV
+
+Ochten, NL
+
+2022 - 2014
+
+:::concise
+- Kamers schoonmaken en ontsmetten
+- Kuikens sorteren op geslacht
+- Kuikens enten
+:::
+
+### Vakkenvuller
+
+Albert Heijn
+
+Opheusden, NL
+
+2019 - 2017
+
+:::concise
+- Vakkenvullen
+- Klanten assisteren
+:::
+
+Cursussen
+--------------------------------------------------------------------------------
+
+### Bijenhouden voor gevorderden
+
+Imkers Oost-Betuwe
+
+Bemmel, NL
+
+heden - 2019
+
+
+### Bijenhouden voor beginners
+
+Imkers Oost-Betuwe
+
+Bemmel, NL
+
+2019 - 2018
+
+

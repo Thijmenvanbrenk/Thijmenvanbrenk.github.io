@@ -4,7 +4,9 @@ author: "Thijmen van Brenk"
 output: bookdown::html_document2
 ---
 
-## organisation of my files
+## Organisation of my files
 
-to show my ability at organizing files heres an example of the file structure from one of my previous projects
-![File structure from previous project](./data/File_organization.png)
+Storing files in a way everyone knows where they can find everything makes it easier for your colleagues or complete strangers to find what they are looking for.       
+Down below you can see the file structure from one of my previous projects. As you can see all the files are stored in a similar way and can be easily found.        
+
+![](data/File_organization.png)
